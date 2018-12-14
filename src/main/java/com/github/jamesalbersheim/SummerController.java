@@ -25,7 +25,7 @@ public class SummerController {
         this.summerService = summerService;
     }
 
-    @RequestMapping(value = "/findSummer", method = RequestMethod.PUT)
+    @RequestMapping(value = "/findSummer", method = RequestMethod.PUT, consumes = "application/json", produces = "application/json")
     public ResponseEntity<Response> findSummer(@RequestBody Request request) {
         List<String> strings = summerService.getCombos(request);
         if (strings.isEmpty()) {
